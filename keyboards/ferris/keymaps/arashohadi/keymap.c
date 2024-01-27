@@ -2,11 +2,12 @@
 
 #include "keymap_swedish.h"
 
+// LAYERS
 enum layers {
     CLM,
     NAV,
-    NUM,
     SYM,
+    NUM,
 };
 
 #define HOME_A LGUI_T(KC_A)
