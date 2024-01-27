@@ -55,18 +55,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Numeric layer - Hold KC_TAB
     [NUM] = LAYOUT_split_3x5_2(
       _______, _______, _______, _______, _______,        _______, KC_7,    KC_8,    KC_9,    _______,
-      _______, _______, _______, _______, _______,        _______, KC_4,    KC_5,    KC_6, _______,
-      _______, _______, _______, _______, _______,        KC_0,    KC_1,    KC_2,    KC_3, _______,
+      _______, _______, _______, _______, _______,        _______, KC_4,    KC_5,    KC_6,    _______,
+      _______, _______, _______, _______, _______,        KC_0,    KC_1,    KC_2,    KC_3,    _______,
                                  _______, _______,        _______, _______
     ),
 };
 
-#if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-
+enum combos {
+  WF_ESC,
+  PL_MINS,
+  DH_UNDS,
+  ZS_CAPS,
 };
-#endif // defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
 
+const uint16_t PROGMEM wf_combo[] = {KC_W, KC_F, COMBO_END};
+const uint16_t PROGMEM pl_combo[] = {KC_P, KC_L, COMBO_END};
+const uint16_t PROGMEM dh_combo[] = {KC_D, KC_H, COMBO_END};
+const uint16_t PROGMEM zs_combo[] = {KC_Z, SE_SLSH, COMBO_END};
 
-
+combo_t key_combos[] = {
+    [WF_ESC]  = COMBO(wf_combo, KC_ESC),
+    [PL_MINS] = COMBO(pl_combo, SE_MINS),
+    [DH_UNDS] = COMBO(dh_combo, SE_UNDS),
+    [ZS_CAPS] = COMBO(zs_combo, CW_TOGG),
+};
 
