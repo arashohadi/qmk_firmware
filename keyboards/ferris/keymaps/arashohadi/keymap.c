@@ -1,5 +1,7 @@
 #include QMK_KEYBOARD_H
 
+#include "keymap_swedish.h"
+
 enum layers {
     CLM,
     NAV,
@@ -21,10 +23,10 @@ enum layers {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Base layer
     [CLM] = LAYOUT_split_3x5_2(
-      KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
-      HOME_A,  HOME_R,  HOME_S,  HOME_T,  HOME_G,                    HOME_M,  HOME_N,  HOME_E,  HOME_I,  HOME_O,
-      KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,                      KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH,
-                                 KC_TAB,  KC_SPC,                    KC_ENT,  KC_BSPC,
+      KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,           KC_J,    KC_L,    KC_U,    KC_Y,    SE_SCLN,
+      HOME_A,  HOME_R,  HOME_S,  HOME_T,  HOME_G,         HOME_M,  HOME_N,  HOME_E,  HOME_I,  HOME_O,
+      KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,           KC_K,    KC_H,    SE_COMM, SE_DOT,  SE_SLSH,
+                                 KC_TAB,  LT(NAV, KC_SPC),         KC_ENT,  KC_BSPC
     ),
 
     // Navigation layer
