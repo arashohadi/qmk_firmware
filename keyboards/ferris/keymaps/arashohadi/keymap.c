@@ -31,7 +31,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     // Navigation layer
     // Hold KC_SPC
-    // [NAV] = LAYOUT(),
+    [NAV] = LAYOUT_split_3x5_2(
+      _______, _______, _______, _______, _______,        _______, SE_LCBR, SE_RCBR, SE_LPRN, SE_RPRN,
+      _______, _______, _______, _______, _______,        KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
+      _______, _______, _______, _______, _______,        _______, SE_LBRC, SE_RBRC, SE_RABK, SE_LABK,
+                                 _______,  KC_SPC,        _______, _______
+    ),
 
     // Numeric layer
     // Hold KC_TAB
